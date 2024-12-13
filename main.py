@@ -4,12 +4,12 @@ def q1():
 
     """
     numero = input("Digite um número: ")
-    if "numero" == "numero"[::-1]:
-        print("É palíndromo")
+    if numero == numero[::-1]:
+        print("True")
     else:
-        print("Não é palíndromo")
+        print("False")
+        
     pass
-
 
 
 def q2():
@@ -17,7 +17,7 @@ def q2():
     Dado um numeral romano, converta-o para um número inteiro.
     """
     nRomano = input("Digite um número romano: ")
-    nRomano = "nRomano".upper()
+    nRomano = nRomano.upper()
     nArabico = 0
 
     for i in range(len(nRomano)):
@@ -47,7 +47,49 @@ def q2():
             nArabico += 1000
             if i > 0 and nRomano[i - 1] == "C":
                 nArabico -= 200
-
+                
     print(nArabico)
+
     pass
 
+def q3():
+    """
+    Quantidade de divisores de um número (incluindo 1 e o próprio número)
+    """
+    numero = int(input("Digite um número: "))
+
+    divisores = 0
+
+    for i in range(1, numero + 1):
+        if numero % i == 0 and i % 3 == 0:
+            divisores += 1
+
+    if divisores == 0:
+        print("O número não possui divisores multiplos de 3")
+    else:
+        print(f"Quantidade de divisores divisiveis por 3: {divisores}")
+        
+    pass
+
+
+def q4():
+    """
+    Soma dos números positivos no intervalo definido
+    """
+    numero1 = int(input(""))
+    numero2 = int(input(""))
+
+    soma = 0
+
+    if numero1 < numero2:
+        for i in range(numero1, numero2 + 1):
+            if i > 0:
+                soma += i
+    else:
+        for i in range(numero2, numero1 + 1):
+            if i > 0:
+                soma += i
+
+    print(soma)
+
+    pass
